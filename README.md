@@ -1,5 +1,5 @@
 # Hatem Shalaby 
-### Operations Excellence · Process Automation · Workforce Analytics
+### Data Analyst . SQL & Python Specialist . WFM Forecasting (Erlang C) . Operations Automation 
 
 > **Turning data into operational dominance.**  
 > *Specializing in WFM, Real-Time Analytics, and Automated SOPs.*
