@@ -23,7 +23,6 @@ jobs:
           pip install pandas numpy scipy openpyxl
 
       - name: Run script
-        run: python wfm_forecast.py
 - uses: actions/checkout@v4  # Update from v3
 - uses: actions/setup-python@v5  # Update from v4
   uses: actions/cache@v5.0.5
