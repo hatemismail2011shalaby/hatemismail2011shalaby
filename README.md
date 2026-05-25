@@ -20,8 +20,8 @@ I don't just analyze data; I engineer the systems that generate it.
 | Operations | Data & Automation | Visualization |
 | :--- | :--- | :--- |
 | WFM (NICE, Aspect) | **SQL** (Advanced) | Power BI |
-| Real-Time Adherence | **Python** (Pandas, NumPy) |
-| Six Sigma | **Excel** (VBA/Macros) |
+| Real-Time Adherence | **Python** (Pandas, NumPy) | Google Sheets |
+| Six Sigma | **Excel** (VBA/Macros) | Google Sheets |
 
 ## 📈 Key Metrics
 - **65%** Reduction in Manual Reporting
