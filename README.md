@@ -1,4 +1,4 @@
-# Hatem Shalaby 👋
+# Hatem Shalaby 
 ### Operations Excellence · Process Automation · Workforce Analytics
 
 > **Turning data into operational dominance.**  
