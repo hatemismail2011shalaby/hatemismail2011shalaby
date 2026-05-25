@@ -1,39 +1,60 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+#!/usr/bin/env python3
+"""
+FILE: wfm_forecast.py
+PURPOSE: Automate Erlang C calculations for WFM scheduling
+AUTHOR: Hatem Shalaby
+"""
 
-name: Python application
+import pandas as pd
+import numpy as np
+from scipy import stats
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+def calculate_erlang_c(traffic_intensity, agents):
+    """
+    Approximate Erlang C formula for wait probability.
+    Note: In production, use 'erlang-c' library for precision.
+    """
+    if agents <= 0:
+        return 1.0
+    
+    # Simplified logic for demonstration
+    utilization = traffic_intensity / agents
+    if utilization >= 1.0:
+        return 1.0 # System unstable
+    
+    # Placeholder for complex Erlang C math
+    # Real implementation would use sum of (A^k / k!) terms
+    return np.exp(-agents * (1 - utilization))
 
-permissions:
-  contents: read
+def generate_schedule(input_file, output_file, target_service_level=0.80):
+    """
+    Reads volume data and generates optimal staffing schedule.
+    """
+    try:
+        df = pd.read_excel(input_file)
+    except FileNotFoundError:
+        print(f"Error: File {input_file} not found.")
+        return
 
-jobs:
-  build:
+    # Calculate Traffic Intensity (A = Calls * AHT / 3600)
+    df['traffic_intensity'] = (df['call_volume'] * df['avg_asec']) / 3600
+    
+    # Dynamic staffing calculation
+    required_staff = []
+    for _, row in df.iterrows():
+        # Iterate to find minimum agents for target SL
+        traffic = row['traffic_intensity']
+        agents = 1
+        while calculate_erlang_c(traffic, agents) > (1 - target_service_level):
+            agents += 1
+        required_staff.append(agents)
+    
+    df['required_fte'] = required_staff
+    
+    # Save output
+    df.to_excel(output_file, index=False)
+    print(f"Schedule generated: {output_file}")
+    print(f"Total FTEs required: {sum(required_staff)}")
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest
+if __name__ == "__main__":
+    # Example usage
