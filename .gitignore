@@ -1,0 +1,30 @@
+# Excel/Office Files (Binary, keep if needed but usually ignored in version control for large files)
+*.xls
+*.xlsm
+*.xlsx
+*.docx
+*.pptx
+*.pdf
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Local env files
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# GitHub Pages Cache
+.cache/
