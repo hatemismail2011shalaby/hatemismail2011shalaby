@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatem Shalaby | Operations Excellence</title>
+    <style>
+        :root {
+            --primary: #00d4aa;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent: #3b82f6;
+            --text: #334155;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background: var(--light); color: var(--text); line-height: 1.6; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; letter-spacing: -1px; }
+        .hero span { color: var(--primary); }
+        .hero p { font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        
+        /* Stats Grid */
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: -50px 0 50px; position: relative; z-index: 10; }
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; }
+
+        /* Projects Section */
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: var(--dark); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+        .card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card-body { padding: 1.5rem; }
+        .card-title { font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--dark); }
+        .tag { display: inline-block; padding: 4px 8px; background: #f1f5f9; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; color: #475569; }
+        
+        /* Footer */
+        footer { background: var(--dark); color: white; text-align: center; padding: 2rem 0; margin-top: 4rem; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .stats { margin-top: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>Hatem <span>Shalaby</span></h1>
+            <p>Operations Excellence · Process Automation · Workforce Analytics</p>
+            <a href="https://hatemismail2011shalaby.github.io/RTA-Operations-Portfolio/" class="btn">View Portfolio</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">65%</div>
+                <div class="stat-label">Manual Time Saved</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">&lt;5%</div>
+                <div class="stat-label">Forecast Variance</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">Agents Scaled</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Workforce Management</h3>
+                    <p>Advanced Erlang C modeling, shrinkage optimization, and real-time adherence tracking.</p>
+                    <br>
+                    <span class="tag">WFM</span><span class="tag">Erlang C</span><span class="tag">Scheduling</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Process Automation</h3>
+                    <p>End-to-end automation of repetitive tasks using Python and SQL, reducing error rates to near zero.</p>
+                    <br>
+                    <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">ETL</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Data Visualization</h3>
+                    <p>Interactive dashboards that drive decision-making for C-level stakeholders.</p>
+                    <br>
+                    <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Excel</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Hatem Shalaby. All Rights Reserved.</p>
+            <p>Operations Transformation Expert</p>
+        </div>
+    </footer>
+</body>
+</html>
